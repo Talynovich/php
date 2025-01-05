@@ -12,13 +12,13 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Create Tasks</h1>
-                <form action="">
+                <form action="store.php" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Title">
+                      <input type="text" class="form-control" placeholder="Title" name="title">
                     </div>
 
                     <div class="form-group">
-                      <textarea name="" class="form-control" placeholder="Введите запись"></textarea>
+                      <textarea name="content" class="form-control" placeholder="Введите запись"></textarea>
                     </div>
 
                     <div class="form-group">

@@ -1,17 +1,9 @@
 <?php 
-    $tasks= [
-        [
-            "id"=> 15,
-            "title"=> "go to the store123",
-            "content"=> "asdaadada"
-        ],
-    ];
-    $dsn = 'mysql:dbname=j88638735_var;host=1bbcbab602bb.hosting.myjino.ru';
-    $user = 'j88638735_var';
-    $password = 'HdT=67bHa]s';
-    
-    $dbh = new PDO($dsn, $user, $password);
-
+    #подключение к базе данных 
+    $pdo = new PDO("mysql:host=1bbcbab602bb.hosting.myjino.ru; dbname=j88638735_var", "j88638735_var", "HdT=67bHa]s"); 
+    $statement = $pdo->prepare("SELECT * FROM tasks");  #подготавливаем запрос prepare = подготовить
+    $statement->execute(); #выполняем запрос execute = выполнять  
+    $tasks = $statement; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,8 +17,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Hello World</h1>
-                <a href="#" class="btn btn-success">All Tasks</a>
+                <h1>All Tasks</h1>
+                <a href="create.php" class="btn btn-success">All Tasks</a>
                 <table class="table">
                     <thead>
                         <tr>
