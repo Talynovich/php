@@ -1,3 +1,11 @@
+<?php 
+$pdo = new PDO("mysql:host=1bbcbab602bb.hosting.myjino.ru; dbname=j88638735_var", "j88638735_var", "HdT=67bHa]s"); 
+$statement = $pdo->prepare("SELECT * FROM tasks WHERE id=:id");
+$statement->bindParam(":id", $_GET["id"]); 
+$statement->execute();  
+$task = $statement->fetch(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +19,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Go to the store</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quis!</p>
+                <h1><?=$task["title"];?></h1>
+                <p class="h4"><?= $task["bodyweight"];?></p>
+                <p><?=$task["content"];?></p>
                 <a href="/bloknot" class="btn btn-dark" >Go back</a>
             </div>
         </div>

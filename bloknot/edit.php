@@ -1,3 +1,11 @@
+<?php 
+$pdo = new PDO("mysql:host=1bbcbab602bb.hosting.myjino.ru; dbname=j88638735_var", "j88638735_var", "HdT=67bHa]s"); 
+$statement = $pdo->prepare("SELECT * FROM tasks WHERE id=:id");
+$statement->bindParam(":id", $_GET["id"]); 
+$statement->execute();  
+$task = $statement->fetch(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +19,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Edit Tesks</h1>
+                <h1>Edit Tasks</h1>
                 <form action="">
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Go to the store">
+                      <input type="text" class="form-control" placeholder="<?=$task["title"];?>">
                     </div>
-
                     <div class="form-group">
-                      <textarea name="" class="form-control" placeholder="Введите запись"></textarea>
+                      <textarea name="" class="form-control" placeholder="<?=$task["bodyweight"];?>"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <textarea name="" class="form-control" placeholder="<?=$task["content"];?>"></textarea>
                     </div>
 
                     <div class="form-group">
