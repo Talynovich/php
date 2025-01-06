@@ -18,10 +18,10 @@ function sayHello()
 sayHello(); // так функция вызывается 
 
 // так создаётся класс 
-class Person 
+class Persons 
 {
-   $name = "Михаил";
-   $surname = "Пупкин"; // в контексте класса переменные будут называться атрибутами 
+   public $name = "Михаил";
+   public $surname = "Пупкин"; // в контексте класса переменные будут называться атрибутами 
 
    function sayHello() // в контексте класса функции будут называться методами
    {
@@ -29,14 +29,14 @@ class Person
    echo "Как дела?";
    }
 }
-$misha = new Person;
+$misha = new Persons;
 echo $misha->name; 
 
 //Теперь мы можем плодить "людей"
-class Person 
+class Persont 
 {
-   $name;
-   $surname; // в контексте класса переменные будут называться атрибутами 
+   public $name;
+   public $surname; // в контексте класса переменные будут называться атрибутами 
 
    function sayHello() // в контексте класса функции будут называться методами
    {
@@ -44,9 +44,9 @@ class Person
    echo "Как дела?";
    }
 }
-$misha = new Person; 
+$misha = new Persont; 
 $misha->name = "Misha"; 
-$petya = new Person; 
+$petya = new Persont; 
 $petya->name = "Petya"; 
 echo $misha->name; // так мы можем вывести атрибут name класса Person 
 
