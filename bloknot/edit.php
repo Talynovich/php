@@ -25,12 +25,11 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                       <input name="title" type="text" value="<?= date("d.m.y");?>" class="form-control" placeholder="<?=$task["title"];?>">
                     </div>
                     <div class="form-group">
-                      <textarea name="bodyweight" class="form-control" placeholder="<?=$task["bodyweight"];?>"></textarea>
+                      <textarea name="bodyweight" class="form-control"><?=$task["bodyweight"];?></textarea>
                     </div>
                     <div class="form-group">
-                      <textarea name="content" class="form-control" placeholder="<?=$task["content"];?>"></textarea>
+                      <textarea name="content" class="form-control"><?=$task["content"];?></textarea>
                     </div>
-
                     <div class="form-group">
                       <button class="btn btn-warning">Submit</button>
                     </div>
