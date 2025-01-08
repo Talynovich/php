@@ -1,4 +1,6 @@
 <?php 
+$url = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nostrum."; 
+$result = mb_substr($url, 8, 20);
     #подключение к базе данных 
     $pdo = new PDO("mysql:host=1bbcbab602bb.hosting.myjino.ru; dbname=j88638735_var", "j88638735_var", "HdT=67bHa]s"); 
     $statement = $pdo->prepare("SELECT * FROM tasks");  #подготавливаем запрос prepare = подготовить
@@ -25,6 +27,7 @@
                             <th>ID</th>
                             <th>Дата</th>
                             <th>Вес</th>
+                            <th>Заметки</th>
                             <th>Actions</th>
                         </tr>
                         <tbody>
@@ -33,6 +36,7 @@
                                     <td><?=$task["id"];?></td>
                                     <td><?=$task["title"];?></td>
                                     <td><?=$task["bodyweight"];?></td>
+                                    <td><?=mb_substr($task["content"], 0, 17); echo '...';?></td>
                                     <td>
                                         <a href="show.php?id=<?=$task["id"];?>" class="btn btn-info">Show</a>
                                         <a href="edit.php?id=<?=$task["id"];?>" class="btn btn-warning">Edit</a>

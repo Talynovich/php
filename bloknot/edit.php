@@ -20,15 +20,15 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
         <div class="row">
             <div class="col-md-12">
                 <h1>Edit Tasks</h1>
-                <form action="">
+                <form action="update.php?id=<?= $task["id"];?>" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="<?=$task["title"];?>">
+                      <input name="title" type="text" value="<?= date("d.m.y");?>" class="form-control" placeholder="<?=$task["title"];?>">
                     </div>
                     <div class="form-group">
-                      <textarea name="" class="form-control" placeholder="<?=$task["bodyweight"];?>"></textarea>
+                      <textarea name="bodyweight" class="form-control" placeholder="<?=$task["bodyweight"];?>"></textarea>
                     </div>
                     <div class="form-group">
-                      <textarea name="" class="form-control" placeholder="<?=$task["content"];?>"></textarea>
+                      <textarea name="content" class="form-control" placeholder="<?=$task["content"];?>"></textarea>
                     </div>
 
                     <div class="form-group">

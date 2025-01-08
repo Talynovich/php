@@ -6,5 +6,5 @@ $statement->bindParam(":title", $_POST["title"]);
 $statement->bindParam(":content", $_POST["content"]); 
 $statement->bindParam(":bodyweight" , $_POST["bodyweight"]); 
 $statement->execute(); 
-header("location: /bloknot/");
+header("location: /");
 ?>

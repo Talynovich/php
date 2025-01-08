@@ -22,7 +22,7 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                 <h1><?=$task["title"];?></h1>
                 <p class="h4"><?= $task["bodyweight"];?></p>
                 <p><?=$task["content"];?></p>
-                <a href="/bloknot" class="btn btn-dark" >Go back</a>
+                <a href="/" class="btn btn-dark" >Go back</a>
             </div>
         </div>
     </div>
