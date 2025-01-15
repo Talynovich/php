@@ -27,7 +27,7 @@ $task = getTask($_GET);
                 <h1>Edit Tasks</h1>
                 <form action="update.php?id=<?= $task["id"];?>" method="post">
                     <div class="form-group">
-                      <input name="title" type="text" value="<?= date("d.m.y");?>" class="form-control" placeholder="<?=$task["title"];?>">
+                      <input name="title" type="text" value="<?=$task["title"];?>" class="form-control" placeholder="<?=$task["title"];?>">
                     </div>
                     <div class="form-group">
                       <textarea name="bodyweight" class="form-control"><?=$task["bodyweight"];?></textarea>
