@@ -1,14 +1,10 @@
 <?php 
-function getTask($id){
-    $pdo = new PDO("mysql:host=1bbcbab602bb.hosting.myjino.ru; dbname=j88638735_var", "j88638735_var", "HdT=67bHa]s"); 
-    $statement = $pdo->prepare("SELECT * FROM tasks WHERE id=:id");
-    // $statement->bindParam(":id", $_GET["id"]); 
-    $statement->execute($id);  
-    $task = $statement->fetch(PDO::FETCH_ASSOC);
-    return $task; 
-    }
-    $task = getTask($_GET); 
-    ?>
+ #подключение к базе данных 
+ require './database/QueryBuilder.php'; 
+
+ $db = new QueryBuilder; 
+$task = $db->getTask($_GET); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,13 +1,10 @@
 <?php 
     #подключение к базе данных 
-function getAllTasks() {
-    $pdo = new PDO("mysql:host=1bbcbab602bb.hosting.myjino.ru; dbname=j88638735_var", "j88638735_var", "HdT=67bHa]s"); 
-    $statement = $pdo->prepare("SELECT * FROM tasks");  #подготавливаем запрос prepare = подготовить
-    $statement->execute(); #выполняем запрос execute = выполнять  
-    $tasks = $statement; 
-    return $tasks;
-}
-$tasks = getAllTasks();
+require './database/QueryBuilder.php'; 
+
+$db = new QueryBuilder; 
+
+$tasks = $db ->getAllTasks();
 ?>
 <!DOCTYPE html>
 <html lang="en">
