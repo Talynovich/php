@@ -2,7 +2,7 @@
 class QueryBuilder{
     // получить список записей
     function getAllTasks() {
-        $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot", "bloknot", "HdT=67bHa]s"); 
+        $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot; charset=utf8", "bloknot", "HdT=67bHa]s"); 
         $statement = $pdo->prepare("SELECT * FROM tasks");  #подготавливаем запрос prepare = подготовить
         $statement->execute(); #выполняем запрос execute = выполнять  
         $tasks = $statement; 
@@ -13,7 +13,7 @@ class QueryBuilder{
     // Добавляет новую запись 
     function addTask($data){
         $sql = "INSERT INTO tasks (title, content, bodyweight) VALUES (:title, :content, :bodyweight)";
-        $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot", "bloknot", "HdT=67bHa]s");
+        $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot; charset=utf8", "bloknot", "HdT=67bHa]s");
         $statement = $pdo ->prepare($sql);
         // $statement->bindParam(":title", $_POST["title"]); 
         // $statement->bindParam(":content", $_POST["content"]); 
@@ -23,7 +23,7 @@ class QueryBuilder{
         }
         // вывод одной записи 
     function getTask($id){
-            $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot", "bloknot", "HdT=67bHa]s");
+            $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot; charset=utf8", "bloknot", "HdT=67bHa]s");
             $statement = $pdo->prepare("SELECT * FROM tasks WHERE id=:id");
             // $statement->bindParam(":id", $_GET["id"]); 
             $statement->execute($id);  
@@ -32,7 +32,7 @@ class QueryBuilder{
             }
             //  изменение / обновление одной записи 
     function updateTask($data){
-                $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot", "bloknot", "HdT=67bHa]s");
+                $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot; charset=utf8", "bloknot", "HdT=67bHa]s");
                 $statement = $pdo->prepare(query: "UPDATE tasks SET content=:content, title=:title, bodyweight=:bodyweight WHERE id=:id");
                 // $statement->bindParam(":id", $_GET["id"]); 
                 // $statement->bindParam(":title", $_POST["title"]); 
@@ -42,7 +42,7 @@ class QueryBuilder{
             }
             // удаление записи 
     function deletaTask($id){
-                $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot", "bloknot", "HdT=67bHa]s"); 
+                $pdo = new PDO("mysql:host=81.177.141.86; port=3306; dbname=bloknot; charset=utf8", "bloknot", "HdT=67bHa]s"); 
                 $statement = $pdo->prepare("DELETE FROM tasks WHERE id=:id");
                 // $statement->bindParam(":id", $_GET["id"]); 
                 $statement->execute($id);  
